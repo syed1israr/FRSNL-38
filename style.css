@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow-x: hidden;
+}
+
+nav {
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: beige;
+    color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+.example {
+    margin: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+p {
+    font-size: 16px;
+    padding: 20px;
+}
+
+.btn {
+    display: flex;
+    gap: 30px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    overflow: hidden;
+   
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px rgba(173, 170, 170, 0.359);
+}
+
+img {
+    width: 100%;
+    left: 20px;
+    box-shadow: 10px 10px 10px #FE6C6D;
+    transform: scale(1);
+    transition: 0.2s ease-in-out;
+    filter: grayscale(1);
+}
+img:hover{
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.chotu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ladki {
+    height: 40vh;
+    width: 30vh;
+    border-radius: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
