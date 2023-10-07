@@ -1,0 +1,73 @@
+const library = [
+    { 
+title: "The Great Gatsby", 
+author: "F. Scott Fitzgerald", 
+year: 1925,
+pages: 180 
+},
+    {
+title: "To Kill a Mockingbird",
+author: "Harper Lee", 
+year: 1960, 
+pages: 281
+},
+    {
+title: "1984", 
+author: "George Orwell", 
+year: 1949, 
+pages: 328 
+},
+    {
+title: "Pride and Prejudice", 
+author: "Jane Austen", 
+year: 1813,
+pages: 432 
+} ];
+ /* Q. Total Number of Pages: Write a function getTotalPages that calculates and returns the total number of pages in the library
+Algo-
+creat a variable to store sum of pages. itrate over library using for( const x of Y) loop and then store Sum in sumOfPages then log it */
+
+let sumOfPages = 0;
+for (const book of library) {
+  sumOfPages += book.pages;
+}
+console.log(sumOfPages);
+
+  /* Q2.List of Book Titles: Write a function getBookTitles that returns an array containing only the titles of the books in the library.
+ Algo- this is basic implementation of map function.  */
+
+
+const titles = library.map( book => book.title);
+console.log(titles);
+
+
+ /* Q3.Books Published After a Given Year: Write a function getBooksPublishedAfterYear(year) that takes a year as a parameter and returns an array containing the titles of books published after that year. */ 
+ /* Algo- to achieve this we can use the 2 functions called filter and map , first we will filter the years on condition of them being 
+ greater than the input and then on that array which was return by filter method we perform mapping to map titles in that array. or to extract titles. then return it and 
+ then we print the function by giving it the desired parameter */
+ function Answer(year) {
+    const filtercall = library.filter(book => book.year > year);
+    const titles = filtercall.map(book => book.title);
+    return titles;
+  }
+  console.log(`So the Book that is published is " ${Answer(1945)} "`);
+ /*Q.4 Average Number of Pages: Write a function getAveragePages that calculates and returns the average number of pages across all books in the library. */
+let numberOfBooks = 0;
+for (const book of library) {
+  numberOfBooks++;
+}
+ console.log(`the average of the number  of pages  are ${sumOfPages/numberOfBooks}`)
+ /* Q5.Longest Book: Write a function getLongestBook that returns the title of the book with the most pages.
+*/
+/*algo-we can use 2 pointer approach where we will itrate over entire pages range and return the maximum one on the basis of codition (max-paged-book-till-now<curr)? curr:max-paged-book-till-now;
+*/
+function getLongestBook() {
+    const longestBook = library.reduce((maxBook_tillnow, currentBook) => {
+      return currentBook.pages > maxBook_tillnow.pages ? currentBook : maxBook_tillnow;
+    }, library[0]);
+    return longestBook.title;
+  }
+  console.log(`The title of the longest book is "${getLongestBook()}"`);
+ 
+
+  
